@@ -1,0 +1,34 @@
+<h1> ng-repeat examples </h1>
+{{repCtrl.selected}}
+
+<h3>options from array</h3>
+<select ng-model="repCtrl.selected.options" ng-options="opt for opt in repCtrl.options"></select>
+<h3>you selected: {{repCtrl.selected.options}}</h3>
+
+--------------------------------------------------
+<h2>radio buttons - array</h2>
+<table>
+    <tr ng-repeat="opt in repCtrl.options">
+        <td>
+            <input type="radio" id="{{opt}}" name="opt" ng-value="opt" ng-model="repCtrl.selected.radio">
+            <label for="{{opt}}" style="cursor:pointer">{{opt}}</label>
+        </td>
+
+    </tr>
+</table>
+
+<h2>you selected: {{repCtrl.selected.radio}} </h2>
+
+--------------------------------------------------
+
+<h2>checkbox - dictionary</h2>
+<table>
+    <tr ng-repeat="(k,v) in repCtrl.checkDic">
+        <td>
+            <input type="radio" id="{{v.name}}" name="v.name" ng-value="v.name" ng-model="repCtrl.selected.checkbox">
+            <label for="{{v.name}}" style="cursor:pointer">{{v}}</label>
+        </td>
+    </tr>
+</table>
+
+<h2>The selected name: {{repCtrl.selected.checkbox}} </h2>

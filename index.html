@@ -1,0 +1,60 @@
+<html ng-app="myApp">
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!-- BOOTSTRAP -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- App Files -->
+    <!-- App controllers -->
+    <script src="app.js"></script>
+    <script src="Main-Controller.js"></script>
+    <script src="Components/Form/Form-Controller.js"></script>
+    <script src="Components/NG-Repeat/NG-Repeat.js"></script>
+    <script src="Components/updateFromService/update1.js"></script>
+    <script src="Components/updateFromService/update2.js"></script>
+
+    <!-- App Services -->
+    <script src="Services/updateService.js"></script>
+    <title>My AngularJS App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#about">Form</a>
+                </li>
+                <li>
+                    <a href="#repeat">ng-repeat</a>
+                </li>
+                <li>
+                    <a href="#update1">FirstUpdate</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+    <div ng-style="{ margin: '50px' }">
+        <ng-view>
+        </ng-view>
+    </div>
+</body>
+
+</html>

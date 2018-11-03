@@ -1,0 +1,9 @@
+<form name="ExampleForm" ng-submit="FormCtrl.submit(ExampleForm.$valid )" novalidate>
+
+    <input type="text" name="uname" ng-model="FormCtrl.Form.userName" required ng-minlength="4">
+
+    <button type="submit" class="btn btn-info" ng-disabled="ExampleForm.$invalid">Info</button>
+    <div class="text-danger" ng-show=ExampleForm.uname.$error.minlength>Name must be at least 4 character length</div>
+
+
+</form>
