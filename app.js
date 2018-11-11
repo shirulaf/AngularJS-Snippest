@@ -4,13 +4,13 @@ app.config([
   "$locationProvider",
   "$routeProvider",
   function($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix("");
+    // $locationProvider.hashPrefix("");
 
     $routeProvider
       .when("/", {
         template: "<h1>This is the default route</h1>"
       })
-      .when("/about", {
+      .when("/form", {
         templateUrl: "Components/Form/Form.html",
         controller: "FormCtrl as FormCtrl"
       })

@@ -7,28 +7,22 @@
 
 --------------------------------------------------
 <h2>radio buttons - array</h2>
-<table>
-    <tr ng-repeat="opt in repCtrl.options">
-        <td>
-            <input type="radio" id="{{opt}}" name="opt" ng-value="opt" ng-model="repCtrl.selected.radio">
-            <label for="{{opt}}" style="cursor:pointer">{{opt}}</label>
-        </td>
-
-    </tr>
-</table>
-
+<ul class="list-unstyled">
+    <li ng-repeat="opt in repCtrl.options">
+        <input type="radio" id="{{opt}}" name="opt" ng-value="opt" ng-model="repCtrl.selected.radio">
+        <label for="{{opt}}" style="cursor:pointer">{{opt}}</label>
+    </li>
+</ul>
 <h2>you selected: {{repCtrl.selected.radio}} </h2>
 
 --------------------------------------------------
 
 <h2>checkbox - dictionary</h2>
-<table>
-    <tr ng-repeat="(k,v) in repCtrl.checkDic">
-        <td>
-            <input type="radio" id="{{v.name}}" name="v.name" ng-value="v.name" ng-model="repCtrl.selected.checkbox">
-            <label for="{{v.name}}" style="cursor:pointer">{{v}}</label>
-        </td>
-    </tr>
-</table>
+<ul class="list-unstyled">
+    <li ng-repeat="(k,v) in repCtrl.checkDic">
+        <input type="radio" id="{{v.name}}" name="v.name" ng-value="v.name" ng-model="repCtrl.selected.checkbox">
+        <label for="{{v.name}}" style="cursor:pointer">{{v}}</label>
+    </li>
+</ul>
 
 <h2>The selected name: {{repCtrl.selected.checkbox}} </h2>
