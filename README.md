@@ -6,3 +6,6 @@ sudo apt-get install -y nodejs
 
 ## Form Validation - Scotch.io
 https://scotch.io/tutorials/angularjs-form-validation
+
+## Local Storage
+https://www.npmjs.com/package/angular-local-storage
