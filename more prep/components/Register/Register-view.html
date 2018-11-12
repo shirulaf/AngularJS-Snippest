@@ -1,0 +1,81 @@
+<form name="registerForm" ng-submit="regCtrl.submit(registerForm.$valid)" novalidate>
+  <div class="row" style="background-color: blanchedalmond">
+    <h4 class="text-center">Registration Form</h4>
+  </div>
+  <div class="row" style="background-color:rgb(206, 9, 9)">
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-4 well">
+      <div
+        class="form-group"
+        ng-class="{'has-error': registerForm.uname.$invalid && registerForm.uname.$touched }"
+      >
+        <label for="uname">User Name:</label>
+        <a href="#" data-toggle="tooltip" title="Enter user name in length of 3-10 characters"><span class="glyphicon glyphicon-question-sign"></a>
+
+        <input
+          required
+          type="text"
+          class="form-control"
+          id="uname"
+          name="uname"
+          ng-model="regCtrl.Form.uname"
+          ng-minlength="3"
+          ng-maxlength="10"
+        />
+        <p
+          ng-show="registerForm.uname.$invalid && registerForm.uname.$touched"
+          class="help-block"
+        >
+          User name must be between 3-10 characters
+        </p>
+      </div>
+      <div class="form-group" ng-class="{'has-error':registerForm.pwd.$invalid && registerForm.pwd.$touched }">
+        <label for="pwd">Password:{{ registerForm.pwd.$invalid }}</label>
+        <input
+          required
+          type="password"
+          class="form-control"
+          name="pwd"
+          ng-model="regCtrl.Form.pwd"
+          ng-minlength="5"
+          ng-pattern="/[a-z\d]/"
+  
+    />
+        <p ng-show="registerForm.pwd.$invalid && registerForm.pwd.$touched" class="help-block"> ng-pattern="/[a-z\d]/"</p>
+      </div>
+
+
+      <div class="form-group" ng-class="{'has-error': (regCtrl.Form.pwdConf !== regCtrl.Form.pwd) && registerForm.pwdConf.$dirty }">
+        <label for="pwd">Password Confirmation:</label>
+        <input ng-disabled="registerForm.pwd.$invalid"
+
+          required
+          type="password"
+          class="form-control"
+          name="pwdConf"
+          ng-model="regCtrl.Form.pwdConf"
+        />
+        <p
+          class="text-danger"
+          ng-show="(regCtrl.Form.pwdConf !== regCtrl.Form.pwd) && registerForm.pwdConf.$dirty"
+        >
+          Passwords dosn't match
+        </p>
+      </div>
+      <div class="checkbox">
+        <label
+          ><input type="checkbox" ng-model="regCtrl.Form.Remember" /> Remember
+          me</label
+        >
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+    <div class="col-sm-6">
+
+        <img ng-src="https://www.bankhapoalim.co.il/images/newhp/logo.png" class=" img-thumbnail"  alt ="image">
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</form>

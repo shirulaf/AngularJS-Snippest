@@ -1,0 +1,56 @@
+<html ng-app="myApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+    <!-- Routing -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!-- Local Storgae -->
+    <script src="node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <!-- BOOTSTRAP -->
+    <!-- Latest compiled and minified CSS -->
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- App Files -->
+    <!-- App controllers -->
+    <script src="app.js"></script>
+    <script src="/mainController.js"></script>
+    <script src="components/Register/Register-Controller.js"></script>
+    <link  rel="stylesheet" href="components/Register/Register-CSS.css"></li>
+    <!-- App Services -->
+    <!-- <script src="Services/updateService.js"></script> -->
+    <title>My AngularJS App</title>
+  </head>
+
+  <body ng-controller="MainCtrl as Mctrl">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li >
+            <a href="#!test">test</a>
+          </li>
+          <li
+            ng-class="{active: Mctrl.activeMenu==='Register'}"
+            ng-click="Mctrl.activeMenu='Register'"
+          >
+            <a href="#!Register">Register</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div ng-style="{ margin: '50px' }"><ng-view> </ng-view></div>
+  </body>
+</html>
